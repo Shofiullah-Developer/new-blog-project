@@ -18,7 +18,7 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', [IslamicblogController::class, 'index'])->name('home');
-Route::get('/blog-category', [IslamicblogController::class, 'category'])->name('blog-category');
+Route::get('/blog-category{id}', [IslamicblogController::class, 'category'])->name('blog-category');
 Route::get('/blog-detail/{id}', [IslamicblogController::class, 'detail'])->name('blog-detail');
 Route::get('/contact', [IslamicblogController::class, 'contact'])->name('contact');
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',])->group(function () {

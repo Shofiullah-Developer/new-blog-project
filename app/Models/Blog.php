@@ -33,6 +33,9 @@ class Blog extends Model
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
+    public function author(){
+        return $this->belongsTo('App\Models\User','author_id');
+    }
 
     public static function updateBlog($request, $id){
         self::$blog = Blog::find($id);
